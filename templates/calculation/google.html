@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block js_extra %}
+{#    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&language=en&sensor=false&callback=init"></script>#}
+    <script src="{% static 'js/google-maps.js' %}" type="application/javascript" ></script>
+    <script src="{% static 'js/calculation_form.js' %}" type="application/javascript"></script>
+{% endblock %}
+
+{% block css_extra %}
+    <link rel="stylesheet" href="{% static 'css/calculation.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="page-panel">
+        <div class="page-panel-inner">
+            <div id="map" class="map"></div>
+            {% include 'calculation/_sidebar.html' with form=form %}
+        </div>
+    </div>
+{% endblock %}

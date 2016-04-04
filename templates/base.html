@@ -1,0 +1,60 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8"/>
+    <title>Ship Express</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="" name="description"/>
+    <meta content="" name="author"/>
+
+    {% block css %}
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap-theme.min.css' %}">
+    {% endblock %}
+    {% block css_extra %}
+    {% endblock %}
+
+    {% block js %}
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/navbar_active.js' %}" type="text/javascript"></script>
+    {% endblock %}
+
+    {% block js_extra %}
+    {% endblock %}
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse" style="margin-bottom: 0; border-radius: 0;">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">оффлайн расчёт</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li id="ships_li"><a href="{% url 'installation:ships-page-view' %}">Грузовые суда</a></li>
+                    <li class="divider-vertical"></li>
+
+                    <li id="icebreakers_li"><a href="{% url 'installation:icebreakers-page-view' %}">Ледоколы</a></li>
+                    <li class="divider-vertical"></li>
+
+                    <li id="ports_li"><a href="{% url 'installation:ports-page-view' %}">Порты</a></li>
+                    <li class="divider-vertical"></li>
+
+                    <li id="equipments_li"><a href="{% url 'installation:equipments-page-view' %}">Техника</a></li>
+                    <li class="divider-vertical"></li>
+
+                    <li id="google-maps_li"><a href="{% url 'calculation:google-calculation-page-view' %}">Расчёт путей</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="utf-8"/>
+        <title></title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+        <meta content="" name="description"/>
+        <meta content="" name="author"/>
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js" type="text/javascript"></script>
+        <script type="application/javascript">
+            function go() {
+                console.log("GO");
+                // var xhr = new XMLHttpRequest();
+                // xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+                $.ajax({
+                    type: "post",
+                    url: "http://www.searates.com/port/port-to-port",
+                    data: {port_a: 23323, port_b: 26971},
+                    beforeSend: function(xhr) { xhr.setRequestHeader('Access-Control-Allow-Origin', 'http://www.searates.com');},
+                    success: function(result) {
+                        console.log(result);
+                    },
+                    error: function(err, status, msg) {
+                        console.log("[ERROR]", err, status, msg);
+                    }
+                });
+            }
+        </script>
+    </head>
+
+    <body>
+    </body>
+</html>

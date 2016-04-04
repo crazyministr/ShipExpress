@@ -1,0 +1,12 @@
+[
+    {
+        "name": "НИКОЛАЙ ЖУКОВ",
+        "speed_in_ballast": 16.6,
+        "speed_at_full_load": 16.4
+    },
+    {
+        "name": "АНАТОЛИЙ КОЛИСНИЧЕНКО",
+        "speed_in_ballast": 18.9,
+        "speed_at_full_load": 10.5
+    }
+]

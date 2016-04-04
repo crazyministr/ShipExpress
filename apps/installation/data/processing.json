@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Певек",
+        "latitude": 69.694724,
+        "longitude": 170.258891,
+        "location": "",
+        "navigation": "",
+        "ice_period": "",
+        "surrounding_towns": "",
+        "railway": "",
+        "airport": "",
+        "oil_terminals": ""
+    },
+    {
+        "name": "архипелаг Новая Земля",
+        "latitude": 75.239158,
+        "longitude": 60.548929,
+        "location": "",
+        "navigation": "",
+        "ice_period": "",
+        "surrounding_towns": "",
+        "railway": "",
+        "airport": "",
+        "oil_terminals": ""
+    },
+    {
+        "name": "остров Земля Александры",
+        "latitude": 80.657872,
+        "longitude": 46.914363,
+        "location": "",
+        "navigation": "",
+        "ice_period": "",
+        "surrounding_towns": "",
+        "railway": "",
+        "airport": "",
+        "oil_terminals": ""
+    }
+]

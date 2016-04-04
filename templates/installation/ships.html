@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_extra %}
+    <link rel="stylesheet" href="{% static 'css/calculation.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="page-panel">
+        <div class="page-panel-inner" style="margin-top: 10px;">
+            {% for ship in ships %}
+                <div class="pure-form table-cell">
+                    <a href="{% url 'installation:ship-page' ship.id %}">
+                        <img src="{{ ship.picture_url }}" width="200px;" height="150px;"/>
+                        <h5>{{ ship.name }}</h5>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

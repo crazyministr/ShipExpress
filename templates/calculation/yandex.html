@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block js_extra %}
+    <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script src="{% static 'js/yandex-maps.js' %}" type="application/javascript" ></script>
+    <script src="{% static 'js/calculation_form.js' %}" type="application/javascript"></script>
+{% endblock %}
+
+{% block css_extra %}
+    <link rel="stylesheet" href="{% static 'css/calculation.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="page-panel">
+        <div class="page-panel-inner">
+            <div id="map" class="map"></div>
+            {% include 'calculation/_btn_sidebar.html' with form=form %}
+        </div>
+    </div>
+{% endblock %}

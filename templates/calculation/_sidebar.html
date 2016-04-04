@@ -1,0 +1,25 @@
+<div class="sidebar" id="accordion">
+    <div class="panel-group" >
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" id="collapse_toggle">
+                        рассчитать
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+                    <form action="{% url 'calculation:calculation-view' %}" class="pure-form pure-form-stacked" method="POST" id="form" >
+                        {% csrf_token %}
+                        <label for="start">от</label>
+                        {{ form.start }}
+                        <label for="finish">до</label>
+                        {{ form.finish }}
+                        <label for="medium">через</label>
+                        {{ form.medium }}
+                        <input id="submit" type="submit" class="button button-primary" value="Рассчитать">
+                    </form>
+             </div>
+        </div>
+    </div>
+</div>

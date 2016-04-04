@@ -1,0 +1,19 @@
+.navbar .divider-vertical {
+    height: 52px;
+    border-left: 1px solid #f2f2f2;
+    border-right: 1px solid #ffffff;
+}
+
+.navbar-inverse .divider-vertical {
+    border-right-color: #222222;
+    border-left-color: #111111;
+}
+
+.content-header {
+    margin-bottom: 0;
+    margin-top: -45px;
+    padding-top: -10px;
+    padding-bottom: 0;
+    background-color: #FFF;
+    border-bottom: 1px solid #EEE;
+}

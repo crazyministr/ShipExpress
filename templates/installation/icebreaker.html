@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container" style="margin-top: 47px;">
+        <div class="row content-header" style="text-align: center;">
+            <h3>{{ form.name.value }}</h3>
+        </div>
+        <div class="row" style="padding-top: 10px;">
+            <div class="col-lg-8">
+                <table class="table">
+                    <thead>
+                        <h4>Характеристики</h4>
+                    </thead>
+                    <tbody>
+                        {% include 'installation/fields/_input.html' with form_field=form.building_place %}
+                        {% include 'installation/fields/_input.html' with form_field=form.length_max %}
+                        {% include 'installation/fields/_input.html' with form_field=form.width_max %}
+                        {% include 'installation/fields/_input.html' with form_field=form.displacement %}
+                        {% include 'installation/fields/_input.html' with form_field=form.propulsion_power %}
+                        {% include 'installation/fields/_input.html' with form_field=form.type_of_appy %}
+                        {% include 'installation/fields/_input.html' with form_field=form.speed %}
+                        {% include 'installation/fields/_input.html' with form_field=form.endurance %}
+                        {% include 'installation/fields/_input.html' with form_field=form.ice_passability %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-lg-4">
+                <img src="{{ picture_url }}" width="100%;" height="100%;" alt="Картинки пока что нет"/>
+            </div>
+        </div>
+    </div>
+{% endblock %}

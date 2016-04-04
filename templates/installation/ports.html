@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_extra %}
+    <link rel="stylesheet" href="{% static 'css/calculation.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="page-panel">
+        <div class="page-panel-inner" style="margin-top: 10px;">
+            {% for port in ports %}
+                <div class="pure-form table-cell">
+                    <a href="{% url 'installation:port-page' port.id %}">
+                        <img src="{{ port.picture_url }}" width="200px;" height="150px;"/>
+                        <h5>{{ port.name }}</h5>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

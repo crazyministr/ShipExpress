@@ -1,0 +1,15 @@
+<div class="sidebar">
+    <button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#sidebar">Расчёт пути</button>
+    <div id="sidebar" class="collapse in">
+        <form action="{% url 'calculation:calculation-view' %}" class="pure-form pure-form-stacked" method="POST" id="form" >
+            {% csrf_token %}
+            <label for="start">от</label>
+            {{ form.start }}
+            <label for="finish">до</label>
+            {{ form.finish }}
+            <label for="medium">через</label>
+            {{ form.medium }}
+            <input id="submit" type="submit" class="button button-primary" value="Рассчитать">
+        </form>
+    </div>
+</div>

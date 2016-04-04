@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block js_extra %}
+    <script src="{% static 'js/offline-maps.js' %}" type="application/javascript"></script>
+    <script src="{% static 'js/calculation_form_offline.js' %}" type="application/javascript"></script>
+{% endblock %}
+
+{% block css_extra %}
+    <link rel="stylesheet" href="{% static 'css/calculation.css' %}">
+    <link rel="stylesheet" href="{% static 'css/specification.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="row" style="padding-top: 13px; padding-left: 13px; padding-right: 13px;">
+        <div class="col-lg-2">
+            <form action="{% url 'calculation:calculation-view' %}" class="pure-form pure-form-stacked" method="POST" id="form" style="border: solid #EEE;">
+                {% csrf_token %}
+                <div style="border-bottom: 2px solid #ccc;">
+                    <label for="start">от</label>{{ form.start }}
+                    <label for="finish">до</label>{{ form.finish }}
+                    <label for="ships">судно</label>{{ form.ships }}
+                </div>
+
+                <div style="border-bottom: 2px solid #ccc;">
+                    <label for="ice">ледовое положение </label>{{ form.ice }}
+                    <div id="icebreakers">
+                        <label for="icebreakers">ледокол</label>{{ form.icebreakers }}
+                    </div>
+                </div>
+
+                <div style="border-bottom: 2px solid #ccc;">
+                    <label for="equipments">техника</label>{{ form.equipments }}
+                </div>
+                <input id="submit" type="submit" class="btn" style="margin-top: 3px;" value="Рассчитать">
+            </form>
+        </div>
+        <div class="col-lg-7" style="overflow: auto;">
+            <img src="" id="img1" alt="" width="100%" height="100%;">
+            <img src="" id="img2" alt="" width="100%" height="100%;">
+        </div>
+        <div class="col-lg-3" style="padding-left: 30px;">
+            <div class="route-step-view _transport _above-ground _init" data-block="route-step-view" id="route_step_view"></div>
+        </div>
+    </div>
+{% endblock %}

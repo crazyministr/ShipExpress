@@ -1,0 +1,11 @@
+<div class="row content-header">
+    <h3 class="col-lg-6">{{ name }}</h3>
+    <div class="btn-group" style="float: right; padding-top: 10px;">
+        <button form="form_id" class="btn btn-primary" type="submit"
+                formaction="/{{ url }}/{{ id }}/save/" >Сохранить изменения</button>
+        {% if id %}
+            <button form="form_id" class="btn btn-danger" type="submit"
+                    formaction="/{{ url }}/{{ id }}/delete/">Удалить</button>
+        {% endif %}
+    </div>
+</div>
